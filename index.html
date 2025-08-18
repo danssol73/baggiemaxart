@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artist Portfolio</title>
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- GLightbox (Lightbox) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <meta name="description" content="A clean, fast artist portfolio with a lightweight gallery and lightbox." />
+</head>
+<body>
+  <a href="#main" class="skip-nav">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html">Baggiemax Art</a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Gallery</button>
+        <div class="dropdown-content" role="menu" aria-label="Gallery categories">
+          <a href="gallery.html#Paintings" role="menuitem">Paintings</a>
+          <a href="gallery.html#Complementary" role="menuitem">Complementary</a>
+          <a href="gallery.html#Glastonbury" role="menuitem">Glastonbury</a>
+          <a href="gallery.html#Still-Life" role="menuitem">Still Life</a>
+          <a href="gallery.html#Animals" role="menuitem">Animals</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <div class="social">
+        <a aria-label="Instagram" href="#" rel="me noopener">IG</a>
+        <a aria-label="Facebook" href="#" rel="me noopener">FB</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1>Artwork, front and center.</h1>
+      <p>Clean, fast, and easy to update. Click any piece to view large.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Latest Works</h2>
+        <a class="link" href="gallery.html">View all</a>
+      </div>
+      <div id="latest-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Baggiemax Art · <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    // Init homepage
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.ArtSite.initHome();
+    
+    // Direct dropdown initialization as backup
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdown = document.querySelector('.dropdown');
+      const button = dropdown?.querySelector('.dropbtn');
+      
+      if (button && dropdown) {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const isOpen = dropdown.classList.contains('open');
+          if (isOpen) {
+            dropdown.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+          } else {
+            dropdown.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+        
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.dropdown')) {
+            dropdown.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

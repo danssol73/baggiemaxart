@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About · Baggiemax Art</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-nav">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html">Baggiemax Art</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About</a>
+      <div class="dropdown">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="about-gallery-dropdown">Gallery</button>
+        <div class="dropdown-content" role="menu" id="about-gallery-dropdown" aria-label="Gallery categories">
+          <a href="gallery.html#Paintings" role="menuitem">Paintings</a>
+          <a href="gallery.html#Complementary" role="menuitem">Complementary</a>
+          <a href="gallery.html#Glastonbury" role="menuitem">Glastonbury</a>
+          <a href="gallery.html#Still-Life" role="menuitem">Still Life</a>
+          <a href="gallery.html#Animals" role="menuitem">Animals</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <div class="social">
+        <a aria-label="Instagram" href="#" rel="me noopener">IG</a>
+        <a aria-label="Facebook" href="#" rel="me noopener">FB</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="narrow">
+    <h1>About the Artist</h1>
+    <p><img class="about-photo" src="images/profile.jpg" alt="Portrait of the artist" loading="lazy" onerror="this.style.display='none'" /></p>
+    <p>Hi, I’m Max. I paint mainly in acrylics — bold color, knife work, and textures that pop.
+       This site is a simple, fast gallery of my work and festival photography.</p>
+    <p>For commissions or questions, <a href="contact.html">get in touch</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Baggiemax Art</p>
+  </footer>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Direct dropdown initialization
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdown = document.querySelector('.dropdown');
+      const button = dropdown?.querySelector('.dropbtn');
+      
+      if (button && dropdown) {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const isOpen = dropdown.classList.contains('open');
+          if (isOpen) {
+            dropdown.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+          } else {
+            dropdown.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+        
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.dropdown')) {
+            dropdown.classList.remove('open');
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
