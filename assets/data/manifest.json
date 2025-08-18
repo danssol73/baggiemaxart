@@ -1,0 +1,56 @@
+{
+  "categories": {
+    "Paintings": [
+      {
+        "src": "images/Paintings/IMG_6293.jpg",
+        "thumb": "images/Paintings/thumbs/IMG_6293.jpg",
+        "title": "Maltichons in a field",
+        "caption": "Acrylic on canvas · 40×50cm",
+        "added": "2025-08-10T20:15:00Z"
+      }
+    ],
+    "Complementary": [
+      {
+        "src": "images/Complementary/IMG_6231.jpg",
+        "thumb": "images/Complementary/thumbs/IMG_6231.jpg",
+        "title": "Racoon",
+        "caption": "Mixed media on canvas · 35×45cm",
+        "added": "2025-08-08T14:30:00Z"
+      },
+      {
+        "src": "images/Complementary/IMG_6249.jpg",
+        "thumb": "images/Complementary/thumbs/IMG_6249.jpg",
+        "title": "Birds",
+        "caption": "Mixed media on canvas · 35×45cm",
+        "added": "2025-08-07T14:30:00Z"
+      }
+    ],
+    "Glastonbury": [
+      {
+        "src": "images/Glastonbury/IMG_6181.jpg",
+        "thumb": "images/Glastonbury/thumbs/IMG_6181.jpg",
+        "title": "Girl in Marketplace",
+        "caption": "Acrylic on canvas · 40×50cm",
+        "added": "2025-08-10T20:15:00Z"
+      }
+    ],
+    "Still Life": [
+      {
+        "src": "images/Still-life/IMG_6159.jpg",
+        "thumb": "images/Still-life/thumbs/IMG_6159.jpg",
+        "title": "Morning Coffee",
+        "caption": "Acrylic on canvas · 40×50cm",
+        "added": "2025-08-10T20:15:00Z"
+      }
+    ],
+    "Animals": [
+      {
+        "src": "images/Animals/IMG_6160.jpg",
+        "thumb": "images/Animals/thumbs/IMG_6160.jpg",
+        "title": "Morning Coffee Chaser",
+        "caption": "Acrylic on canvas · 40×50cm",
+        "added": "2025-08-10T20:15:00Z"
+      }
+    ]	
+  }
+}
